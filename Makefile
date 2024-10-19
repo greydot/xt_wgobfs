@@ -9,11 +9,8 @@ lib_install: lib
 	mkdir -p $(DESTDIR)/lib/xtables
 	cp libxt_WGOBFS.so $(DESTDIR)/lib/xtables
 
-%.so: %.o
-	$(CC) -shared $(XTABLES_LDFLAGS) -o $@ $<
-
-%.o: src/%.c
-	$(CC) $(XTABLES_CFLAGS) -o $@ -c $<
+libxt_WGOBFS.so:
+	$(CC) -shared $(XTABLES_LDFLAGS) $(XTABLES_LDFLAGS) -o $@ src/libxt_WGOBFS.c
 
 module:
 	$(MAKE) -C $(KERNEL_DIR) M=$(PWD)/src modules
