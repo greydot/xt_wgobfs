@@ -1,2 +1,2 @@
-obj-m += xt_WGOBFS.o
+obj-m += xt_wgobfs.o
 xt_wgobfs-objs += xt_WGOBFS_main.o chacha.o
